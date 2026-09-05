@@ -1,0 +1,15 @@
+{% assign deck_awards = site.data.awards.gallery | sort: 'resume_order' %}
+{% assign first_award = deck_awards | first %}
+<aside class="resume-honors" aria-label="获奖证书相册">
+  <div class="resume-honors-heading"><span class="eyebrow">SELECTED HONORS</span><span class="eyebrow" data-deck-count>01 / 0{{ deck_awards.size }}</span></div>
+  <button class="resume-award-deck" type="button" aria-label="切换下一项获奖证书" aria-describedby="resume-deck-hint" aria-keyshortcuts="ArrowLeft ArrowRight" disabled>
+    {% for award in deck_awards %}<span class="resume-award-sheet" data-deck-sheet data-position="{{ forloop.index0 }}" style="--award-ratio: {{ award.thumbnail_width }} / 850"{% unless forloop.first %} aria-hidden="true"{% endunless %}><img src="{{ award.thumbnail | relative_url }}" alt="{{ award.alt | escape }}" width="{{ award.thumbnail_width }}" height="850" decoding="async"></span>{% endfor %}
+  </button>
+  <p class="resume-deck-hint" id="resume-deck-hint">点击证书，切换下一张 <span aria-hidden="true">↻</span></p>
+  <div class="resume-deck-footer">
+    <div class="resume-deck-caption" aria-live="polite" aria-atomic="true"><p class="award-distinction" data-deck-distinction>{{ first_award.distinction }}</p><h3 data-deck-title>{{ first_award.title }}</h3></div>
+    <div class="resume-deck-links">
+      {% for award in deck_awards %}<a class="text-link" href="{{ award.original | relative_url }}" target="_blank" rel="noopener" aria-label="放大查看{{ award.full_title | escape }}" data-deck-preview data-award-open data-image="{{ award.image | relative_url }}" data-title="{{ award.full_title | escape }}" data-short-title="{{ award.title | escape }}" data-distinction="{{ award.distinction | escape }}" data-alt="{{ award.alt | escape }}" data-detail="{{ award.detail | escape }}" data-original-label="{{ award.original_label }}"{% unless forloop.first %} hidden{% endunless %}>放大查看 <span aria-hidden="true">↗</span></a>{% endfor %}
+    </div>
+  </div>
+</aside>

@@ -89,25 +89,25 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .project .text-link { margin-top: 10px; }
 .awards-section { padding-top: 66px; }
 .awards-section .section-heading { margin-bottom: 16px; }
-.awards-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; color: var(--muted); margin-bottom: 29px; }
+.awards-intro { display: flex; align-items: baseline; justify-content: space-between; gap: 12px 24px; color: var(--muted); margin-bottom: 34px; }
 .awards-intro p { font-size: 15px; }
 .awards-intro > span { font-size: 12px; }
-.awards-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.awards-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 36px; }
 .award-card { min-width: 0; scroll-margin-top: 30px; }
-.award-index { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: var(--muted); font: 400 11px/1.7 var(--mono); }
+.award-index { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 21px; color: var(--muted); font: 400 11px/1.7 var(--mono); }
 .award-index > span:last-child { color: var(--accent); }
-.award-frame { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 5; padding: 23px; background: var(--surface); border: 1px solid var(--line); border-radius: 3px; }
-.award-frame--photo { background: light-dark(#e0e6e5, #263432); }
-.award-frame img { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; filter: drop-shadow(0 4px 5px #00000015); }
-.award-enlarge { position: absolute; bottom: 10px; right: 10px; width: 28px; height: 28px; display: grid; place-items: center; background: var(--paper); color: var(--muted); border: 1px solid var(--line); border-radius: 50%; }
+.award-frame { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: 3 / 4; cursor: zoom-in; }
+.award-sheet { position: relative; display: block; flex: 0 0 auto; height: 100%; max-width: 100%; aspect-ratio: var(--award-ratio); }
+.award-sheet img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 1px; box-shadow: 0 1px 2px #24201414, 0 9px 18px -10px #24201435, 0 22px 38px -22px #24201435; outline: 1px solid #2420140a; outline-offset: -1px; }
+.award-enlarge { position: absolute; bottom: 15px; right: -12px; width: 32px; height: 32px; display: grid; place-items: center; background: var(--paper); color: var(--accent); border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 3px 9px #0000000a; }
 .award-enlarge svg { width: 16px; height: 16px; }
-.award-frame:hover { border-color: var(--accent); }
-.award-frame:hover .award-enlarge { color: var(--accent); }
-.award-caption { padding-top: 19px; }
+.award-frame:focus-visible .award-enlarge { color: var(--ink); }
+.award-caption { padding-top: 29px; }
 .award-distinction { color: var(--accent); font-size: 12px; font-weight: 500; margin-bottom: 7px; }
 .award-card h3 { font-size: 19px; line-height: 1.5; letter-spacing: -.025em; }
 .award-organization { color: var(--muted); font-size: 13px; line-height: 1.8; margin-top: 8px; min-height: 47px; }
 .award-original { margin-top: 6px; font-size: 12px; color: var(--muted); }
+.award-original > span { display: inline-block; }
 .qualification { display: flex; align-items: center; gap: 23px; padding: 22px 0; margin-top: 29px; border-block: 1px solid var(--line); }
 .qualification-monogram { color: var(--accent); font: 400 24px/1.4 Georgia, serif; letter-spacing: -.035em; padding-right: 24px; border-right: 1px solid var(--line); }
 .qualification .eyebrow { font-size: 10px; }
@@ -124,8 +124,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .icon-button { width: 44px; height: 44px; flex: 0 0 auto; display: inline-grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; padding: 0; background: var(--paper); color: var(--ink); font-size: 20px; line-height: 1; }
 .icon-button:hover { color: var(--accent); background: var(--surface); }
 .award-close { font-size: 27px; }
-.award-viewer-stage { flex: 1; min-height: 0; padding: 23px; background: var(--surface); overflow: auto; }
-.award-viewer-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+.award-viewer-stage { position: relative; flex: 1; min-height: 0; padding: 26px; overflow: auto; }
+.award-viewer-image { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 10px #00000012); }
+.award-viewer-stage.is-loading .award-viewer-image { opacity: 0; }
+.award-viewer-stage.has-error .award-viewer-image { visibility: hidden; }
+.award-viewer-status { position: absolute; inset: 24px; display: grid; place-items: center; text-align: center; font-size: 13px; color: var(--muted); }
 .award-dialog-footer { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 11px 25px; border-top: 1px solid var(--line); }
 .award-viewer-info p { font-size: 12px; color: var(--muted); }
 .award-viewer-info .text-link { min-height: 37px; font-size: 13px; }
@@ -183,12 +186,34 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 .prose code { font: 400 .88em/1.6 var(--mono); background: var(--surface); padding: 2px 5px; overflow-wrap: anywhere; }
 .case-next { border-top: 1px solid var(--line); padding: 32px 0 56px; display: grid; gap: 14px; }
 .case-next a { font-size: 23px; font-weight: 500; display: inline-flex; align-items: center; gap: 25px; }
-.resume-page { max-width: 880px; padding: 65px 0; }
-.resume-heading { padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+.resume-page { padding: 58px 0 65px; }
+.resume-heading { display: grid; grid-template-columns: minmax(0, 1fr) 300px; align-items: center; gap: 60px; padding-bottom: 44px; border-bottom: 1px solid var(--line); }
 .resume-heading h1 { font-size: 50px; line-height: 1.4; margin: 16px 0 12px; letter-spacing: -.04em; }
-.resume-heading p { color: var(--muted); }
+.resume-intro > p { color: var(--muted); }
+.resume-intro { min-width: 0; }
 .resume-actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
-.resume-section { padding-top: 38px; }
+.resume-honors { min-width: 0; padding: 0 12px; }
+.resume-honors-heading { display: flex; justify-content: space-between; gap: 15px; }
+.resume-honors-heading .eyebrow { font-size: 10px; letter-spacing: .08em; }
+.resume-award-deck { position: relative; display: block; isolation: isolate; width: 100%; height: 280px; border: 0; padding: 0; margin: 17px 0 25px; background: transparent; touch-action: pan-y; }
+.resume-award-deck:disabled { cursor: default; }
+.resume-award-deck:disabled + .resume-deck-hint { visibility: hidden; }
+.resume-award-sheet { position: absolute; display: block; top: 0; left: 50%; height: 100%; aspect-ratio: var(--award-ratio); max-width: 100%; transform-origin: 50% 80%; }
+.resume-award-sheet img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: 3px; box-shadow: 0 2px 4px #241b1210, 0 12px 24px -9px #241b1230; }
+.resume-award-sheet[data-position="0"] { z-index: 4; transform: translateX(-50%) translate(-8px, 0) rotate(-2deg); }
+.resume-award-sheet[data-position="1"] { z-index: 3; transform: translateX(-50%) translate(11px, 8px) rotate(3deg) scale(.98); }
+.resume-award-sheet[data-position="2"] { z-index: 2; transform: translateX(-50%) translate(23px, 16px) rotate(6deg) scale(.95); }
+.resume-award-sheet[data-position="3"] { z-index: 1; transform: translateX(-50%) translate(4px, 22px) rotate(-5deg) scale(.92); }
+.resume-deck-hint { color: var(--muted); font-size: 11px; text-align: center; }
+.resume-deck-hint > span { display: inline-block; margin-left: 6px; font-size: 14px; }
+.resume-deck-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; padding-top: 13px; border-top: 1px solid var(--line); }
+.resume-deck-caption { min-width: 0; }
+.resume-deck-caption .award-distinction { font-size: 10px; margin-bottom: 3px; }
+.resume-deck-caption h3 { font-size: 14px; line-height: 1.6; }
+.resume-deck-links { flex: 0 0 auto; }
+.resume-deck-links .text-link { gap: 6px; font-size: 11px; color: var(--muted); }
+.resume-deck-links .text-link:hover { color: var(--accent); }
+.resume-section { max-width: 880px; padding-top: 38px; }
 .resume-section h2 { font-size: 26px; margin-bottom: 24px; letter-spacing: -.03em; }
 .resume-item { margin-bottom: 28px; }
 .resume-item:last-child { margin-bottom: 0; }
@@ -217,14 +242,15 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .flow { gap: 7px; }
   .flow-box { font-size: 13px; padding: 16px 4px; }
   .home-lower { gap: 40px; }
-  .awards-grid { gap: 19px; }
-  .award-frame { padding: 17px; }
+  .awards-grid { gap: 27px; }
   .award-card h3 { font-size: 17px; }
+  .resume-heading { grid-template-columns: minmax(0, 1fr) 270px; gap: 38px; }
+  .resume-award-deck { height: 265px; }
   .case-body { grid-template-columns: 135px minmax(0, 1fr); gap: 35px; }
 }
 @media (max-width: 900px) {
   .awards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; }
-  .award-frame { aspect-ratio: auto; height: 340px; padding: 23px; }
+  .award-frame { aspect-ratio: auto; height: 340px; }
   .award-card h3 { font-size: 19px; }
   .award-organization { min-height: 0; }
 }
@@ -257,6 +283,11 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .case-body { display: block; }
   .case-toc { position: static; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 25px; padding-bottom: 24px; margin-bottom: 30px; border-bottom: 1px solid var(--line); }
   .case-toc .eyebrow { width: 100%; margin: 0; }
+}
+@media (max-width: 760px) {
+  .resume-heading { grid-template-columns: minmax(0, 1fr); gap: 35px; }
+  .resume-honors { width: 285px; max-width: 100%; margin-inline: auto; }
+  .resume-award-deck { height: 285px; }
 }
 @media (max-width: 600px) {
   .site-shell { width: calc(100% - 44px); }
@@ -293,9 +324,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .awards-intro p { font-size: 14px; margin-bottom: 6px; }
   .awards-intro > span { font-size: 11px; }
   .awards-grid { gap: 28px 22px; }
-  .award-frame { height: 275px; padding: 17px; }
+  .award-frame { height: 260px; }
   .award-card h3 { font-size: 18px; }
-  .award-caption { padding-top: 16px; }
+  .award-caption { padding-top: 24px; }
   .qualification { gap: 17px; padding-block: 18px; margin-top: 24px; }
   .qualification-monogram { font-size: 22px; padding-right: 17px; }
   .qualification h3 > span { display: none; }
@@ -342,7 +373,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 }
 @media (max-width: 460px) {
   .awards-grid { grid-template-columns: 1fr; gap: 29px; }
-  .award-frame { height: 355px; padding: 25px; }
+  .award-frame { height: min(410px, 112vw); }
   .award-organization { font-size: 13px; }
   .award-original { margin-top: 3px; }
 }
@@ -362,15 +393,43 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
   .button, .text-link, .site-nav a { transition: opacity .16s ease, color .16s ease; }
   .project-image-link .project-art { transition: transform .18s ease; }
   .project-image-link:hover .project-art { transform: translateY(-3px); }
-  .award-frame, .award-enlarge { transition: border-color .18s ease, color .18s ease; }
-  .award-frame img { transition: transform .2s ease; }
-  .award-frame:hover img { transform: translateY(-3px); }
+  .award-sheet { transition: transform .45s cubic-bezier(.22, 1, .36, 1); }
+  .award-sheet img { transition: box-shadow .45s ease; }
+  .award-enlarge { transition: opacity .22s ease, transform .35s ease, color .22s ease; }
+  .award-original > span { transition: transform .25s ease; }
+  .resume-award-sheet { transition: transform .42s cubic-bezier(.22, 1, .36, 1); }
+  .resume-award-sheet img { transition: box-shadow .35s ease; }
+  .resume-deck-hint > span { transition: transform .3s ease; }
+  .award-original:hover > span, .award-original:focus-visible > span { transform: translate(2px, -2px); }
+  .award-dialog[open] { animation: award-dialog-enter .28s cubic-bezier(.22, 1, .36, 1) both; }
+  .award-dialog[open]::backdrop { animation: award-backdrop-enter .25s ease both; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .award-enlarge { opacity: 0; }
+  .award-frame:hover .award-enlarge, .award-frame:focus-visible .award-enlarge { opacity: 1; }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .award-enlarge { transform: translateY(5px); }
+  .award-frame:hover .award-sheet, .award-frame:focus-visible .award-sheet { transform: translateY(-6px); }
+  .award-frame:hover .award-sheet img, .award-frame:focus-visible .award-sheet img { box-shadow: 0 2px 3px #24201414, 0 17px 25px -14px #24201440, 0 30px 45px -25px #24201440; }
+  .award-frame:hover .award-enlarge, .award-frame:focus-visible .award-enlarge { transform: translateY(0); }
+  .resume-award-deck:hover .resume-award-sheet[data-position="0"], .resume-award-deck:focus-visible .resume-award-sheet[data-position="0"] { transform: translateX(-50%) translate(-8px, -4px) rotate(-1deg); }
+  .resume-award-deck:hover + .resume-deck-hint > span { transform: rotate(45deg); }
+}
+@keyframes award-dialog-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes award-backdrop-enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @media print {
   :root { color-scheme: light; }
   body { background: white; color: black; font-size: 11pt; }
   .site-shell { width: 100%; }
-  .site-header, .site-footer, .resume-actions, .case-toc, .back-link, .case-next, .skip-link, .award-dialog, .award-enlarge, .award-original { display: none; }
+  .site-header, .site-footer, .resume-actions, .resume-honors, .case-toc, .back-link, .case-next, .skip-link, .award-dialog, .award-enlarge, .award-original { display: none; }
+  .resume-heading { display: block; }
   .award-card { break-inside: avoid; }
   .resume-page, .case-header, .case-body { padding-block: 0; }
   .resume-section { padding-top: 20px; }
