@@ -1,0 +1,8 @@
+<header class="site-header">
+  <a class="brand" href="{{ '/' | relative_url }}" aria-label="陈怀桂，返回首页"><span class="brand-mark" aria-hidden="true">c</span><span>陈怀桂 <span class="brand-handle">/ inceCheng</span></span></a>
+  <nav class="site-nav" aria-label="主导航">
+    {% for item in site.data.navigation.main %}<a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a>{% endfor %}
+    <a class="nav-github" href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    <button class="theme-toggle" type="button" aria-label="切换至深色外观" hidden><span aria-hidden="true">◐</span></button>
+  </nav>
+</header>

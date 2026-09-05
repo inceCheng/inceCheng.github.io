@@ -5,8 +5,12 @@ _site/
 # Ignore the directory for local files during development
 local/
 
-# Ignore the Gemfile that is generated
-Gemfile.lock
+# Local build dependencies and caches
+.bundle/
+vendor/
+.jekyll-cache/
+.DS_Store
+tmp/
 
 # Ingore files created by npm
 node_modules

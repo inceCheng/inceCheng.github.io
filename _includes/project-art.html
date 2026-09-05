@@ -1,0 +1,13 @@
+{% if include.id == 'wenji' %}
+<div class="project-art agent-art" role="img" aria-label="问迹项目流程示意：任务接入，编排与执行，结果关联来源。">
+  <div class="art-label"><span>01 / AGENT SYSTEM</span><span>流程示意</span></div>
+  <div class="flow"><span class="flow-box">任务接入</span><span class="flow-arrow" aria-hidden="true">→</span><span class="flow-box is-center">编排 / 执行</span><span class="flow-arrow" aria-hidden="true">→</span><span class="flow-box">结果 / 来源</span></div>
+  <div class="art-label">TOOLS · MEMORY · EVIDENCE</div>
+</div>
+{% else %}
+<div class="project-art library-art" role="img" aria-label="高校系统集成流程示意：数据接入、身份认证和服务交付。">
+  <div class="art-label"><span>02 / BACKEND INTEGRATION</span><span>流程示意</span></div>
+  <div class="book-stack"><div class="book"><span class="book-index">01 / DATA</span><span>数据接入</span></div><div class="book"><span class="book-index">02 / AUTH</span><span>身份认证</span></div><div class="book"><span class="book-index">03 / SHIP</span><span>服务交付</span></div></div>
+  <div class="art-label">CONNECT · NORMALIZE · DELIVER</div>
+</div>
+{% endif %}

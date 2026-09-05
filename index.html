@@ -1,0 +1,56 @@
+---
+layout: portfolio
+redirect_from:
+  - /about/
+  - /about.html
+  - /portfolio/
+  - /skills/
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="eyebrow">AGENT ENGINEERING / BACKEND SYSTEMS</p>
+    <h1 id="hero-title">把 Agent，<br>接入<em>真实业务。</em></h1>
+    <p class="hero-role">{{ site.data.profile.name }} · {{ site.data.profile.role }}</p>
+    <p class="hero-intro">{{ site.data.profile.intro }}</p>
+    <div class="hero-actions"><a class="button" href="#projects">浏览精选项目 <span aria-hidden="true">↓</span></a><a class="text-link" href="{{ '/cv/' | relative_url }}">查看简历 <span aria-hidden="true">↗</span></a></div>
+    <p class="availability"><span class="status-dot" aria-hidden="true"></span><span>{{ site.data.profile.availability }}</span></p>
+  </div>
+  <div class="system-art" role="img" aria-label="技术关注方向：异步任务引擎、多 Agent 编排、可追溯结果。">
+    <div class="system-art-heading"><span class="eyebrow">SYSTEMS I WORK ON</span><span class="system-plus" aria-hidden="true">+</span></div>
+    <div class="system-stack"><div class="system-node"><span>01</span><strong>异步任务引擎</strong></div><div class="system-connector"></div><div class="system-node is-accent"><span>02</span><strong>多 Agent 编排</strong></div><div class="system-connector"></div><div class="system-node"><span>03</span><strong>可追溯结果</strong></div></div>
+    <div class="art-label system-art-footer"><span>BUILD / TRACE / REFINE</span><span>技术方向示意</span></div>
+  </div>
+</section>
+<div class="principles"><p class="signature">Thoughtful systems.<br class="mobile-break"> Traceable outcomes.</p><p>任务编排 / 工具与记忆 / 后端交付</p></div>
+<section class="home-section" id="projects" aria-labelledby="projects-title">
+  <div class="section-heading"><h2 id="projects-title">精选项目</h2><span class="eyebrow">SELECTED WORK / 01—02</span></div>
+  <div class="project-grid">
+    {% for project in site.data.projects %}
+    <article class="project">
+      <a class="project-image-link" href="{{ project.url | relative_url }}" aria-label="阅读{{ project.title }}案例">{% include project-art.html id=project.id %}</a>
+      <p class="project-meta">{{ project.organization }} / {{ project.role }}</p>
+      <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+      <p class="project-description">{{ project.description }}</p>
+      <p class="project-stack">{{ project.stack }}</p>
+      <a class="text-link" href="{{ project.url | relative_url }}">阅读技术案例 <span aria-hidden="true">↗</span></a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<div class="home-lower">
+  <section class="home-section" id="experience" aria-labelledby="experience-title">
+    <div class="section-heading"><h2 id="experience-title">工作与学习</h2><span class="eyebrow">EXPERIENCE</span></div>
+    <ol class="timeline">
+      <li><p class="timeline-date">2026.03 — 2026.09</p><h3>效率源科技 · Agent 开发实习生</h3><p>多 Agent 编排、任务引擎与证据溯源</p></li>
+      <li><p class="timeline-date">2025.09 — 2028.06</p><h3>成都信息工程大学 · 人工智能硕士</h3><p>2028 届</p></li>
+      <li><p class="timeline-date">2023.04 — 2024.04</p><h3>北京超星 · Java 开发工程师</h3><p>高校系统集成与私有化交付</p></li>
+      <li><p class="timeline-date">2019.09 — 2023.06</p><h3>河南工业大学 · 软件工程本科</h3></li>
+    </ol>
+  </section>
+  <section class="home-section about-section" id="about" aria-labelledby="about-title">
+    <div class="section-heading"><h2 id="about-title">关于我</h2><span class="eyebrow">A LITTLE CONTEXT</span></div>
+    <p>{{ site.data.profile.about }}</p>
+    <dl class="skill-list">{% for skill in site.data.profile.skills %}<div><dt>{{ skill.label }}</dt><dd>{{ skill.summary }}</dd></div>{% endfor %}</dl>
+    <a class="text-link" href="{{ '/cv/' | relative_url }}">查看完整履历 <span aria-hidden="true">↗</span></a>
+  </section>
+</div>

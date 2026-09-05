@@ -1,0 +1,44 @@
+name: 陈怀桂
+handle: inceCheng
+role: Agent / AI 应用后端
+email: 1506524745@qq.com
+github: https://github.com/inceCheng
+resume: /files/resume.pdf
+intro: 2028 届人工智能硕士，具备 Java 后端工作经历。关注多 Agent 编排、任务执行与可追溯的 AI 应用。
+availability: 寻找 Agent 开发实习 · 可实习 6 个月以上 / 每周 5 天
+about: 我的经历从 Java 后端开发延伸到 Agent 系统。在真实业务中，关注任务如何执行、工具如何受控，以及结果如何被核查。
+education:
+  - school: 成都信息工程大学
+    degree: 硕士
+    major: 人工智能
+    dates: 2025.09 — 2028.06
+  - school: 河南工业大学
+    degree: 本科
+    major: 软件工程
+    dates: 2019.09 — 2023.06
+experience:
+  - company: 效率源科技
+    team: 问迹智能线索研判系统
+    role: Agent 开发实习生
+    dates: 2026.03 — 2026.09
+    summary: 多 Agent 编排、任务引擎与证据溯源
+    url: /projects/wenji/
+  - company: 北京超星
+    team: 移动图书馆产品部
+    role: Java 开发工程师
+    dates: 2023.04 — 2024.04
+    summary: 高校系统集成、身份认证与私有化交付
+    url: /projects/library/
+skills:
+  - label: Agent
+    summary: LangGraph / DeepAgents / RAG
+    detail: Tool Calling、多 Agent 协作、上下文与记忆管理、RAG 检索链路；具备 LangChain、LangGraph、DeepAgents 实践经验。
+  - label: 后端
+    summary: Java / Spring Boot / Python
+    detail: Java 集合、并发与 JVM，Spring Boot；使用 Python / FastAPI、TypeScript / Bun 开发异构服务。
+  - label: 数据
+    summary: MySQL / PostgreSQL / Redis / Kafka
+    detail: 数据库、缓存、事务与异步消息处理。
+  - label: 工程
+    summary: Linux / Docker / Git
+    detail: 开源大模型本地部署，服务打包与部署，数据结构与算法、计算机网络和操作系统。

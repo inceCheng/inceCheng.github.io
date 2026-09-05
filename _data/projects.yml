@@ -1,0 +1,18 @@
+- id: wenji
+  number: "01"
+  category: AGENT SYSTEM
+  organization: 效率源科技
+  role: Agent 开发实习
+  title: 问迹 · 智能线索研判系统
+  description: 连接异步任务、多 Agent 协作与证据溯源，为长时运行任务建立可追踪的执行链路。
+  stack: LangGraph / DeepAgents / Java
+  url: /projects/wenji/
+- id: library
+  number: "02"
+  category: BACKEND INTEGRATION
+  organization: 北京超星
+  role: Java 开发工程师
+  title: 高校系统集成与交付
+  description: 围绕读者数据同步、统一身份认证和高校定制接口，完成从系统对接到内网部署的交付。
+  stack: Spring Boot / MyBatis / Docker
+  url: /projects/library/

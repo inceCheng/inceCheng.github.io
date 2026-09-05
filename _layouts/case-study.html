@@ -1,0 +1,18 @@
+---
+layout: portfolio
+---
+<article class="case-page">
+  <header class="case-header">
+    <a class="back-link" href="{{ '/#projects' | relative_url }}"><span aria-hidden="true">←</span> 返回精选项目</a>
+    <p class="eyebrow">{{ page.category_label }}</p>
+    <h1>{{ page.title }}</h1>
+    <p class="case-description">{{ page.description }}</p>
+    <dl class="case-meta"><div><dt>所在团队</dt><dd>{{ page.organization }}</dd></div><div><dt>担任角色</dt><dd>{{ page.role }}</dd></div><div><dt>时间</dt><dd>{{ page.period }}</dd></div></dl>
+  </header>
+  <div class="case-illustration">{% include project-art.html id=page.project_id %}</div>
+  <div class="case-body">
+    <nav class="case-toc" aria-label="案例目录"><span class="eyebrow">IN THIS CASE</span><a href="#context">业务背景</a><a href="#responsibility">我的职责</a><a href="#design">设计与取舍</a><a href="#validation">规模与验证</a></nav>
+    <div class="prose">{{ content }}</div>
+  </div>
+  <div class="case-next"><span class="eyebrow">CONTINUE EXPLORING</span><a href="{{ page.next_url | relative_url }}">{{ page.next_title }} <span aria-hidden="true">↗</span></a></div>
+</article>
