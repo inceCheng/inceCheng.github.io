@@ -2,7 +2,7 @@
 
 [访问主页](https://incecheng.github.io/) · [在线简历](https://incecheng.github.io/cv/)
 
-面向 Agent / AI 应用后端方向的个人作品集，包含个人介绍、问迹项目、高校系统集成案例和简历 PDF。使用 Jekyll 3.10，部署在 GitHub Pages；无需 Node.js 构建，也没有外部字体或前端运行依赖。
+面向 Agent / AI 应用后端方向的个人作品集，包含个人介绍、问迹项目、高校系统集成案例、获奖图册和简历 PDF。使用 Jekyll 3.10，部署在 GitHub Pages；无需 Node.js 构建，也没有外部字体或前端运行依赖。
 
 ## 更新内容
 
@@ -11,12 +11,17 @@
 | 个人资料、联系信息、教育与工作经历 | `_data/profile.yml` |
 | 首页时间线与首屏结构 | `index.html` |
 | 首页项目摘要 | `_data/projects.yml` |
+| 获奖信息与语言资质 | `_data/awards.yml` |
+| 获奖照片与证书预览图 | `assets/awards/` |
+| 竞赛证书原始 PDF | `files/awards/` |
 | 项目详情 | `_case_studies/wenji.md`、`_case_studies/library.md` |
 | 简历下载 | `files/resume.pdf` |
 | 导航 | `_data/navigation.yml` |
 | 页面外观 | `assets/css/portfolio.css` |
 
-更新求职安排、时间或项目描述时，保持网页与 PDF 一致。案例中的数字按任务规模、管理范围和测试覆盖分别描述；流程图用于说明技术职责。
+个人资料与项目描述以本人确认的信息为准。案例中的数字按任务规模、管理范围和测试覆盖分别描述；流程图用于说明技术职责。
+
+获奖图册保留照片与证书的完整比例，使用 WebP 缩略图并延迟加载，点击可打开支持键盘切换的预览。原图与证书 PDF 独立保留。新增奖项时更新 `_data/awards.yml`，首页与在线简历会同步；已有简历 PDF 仅在明确需要时替换。英语四级目前使用文字展示。
 
 ## 本地预览
 
@@ -46,7 +51,7 @@ bundle exec jekyll build
 
 仓库 Pages 配置为从 `master` 分支根目录构建，推送后由 GitHub Pages 自动发布。可以在仓库 Actions 查看构建与部署结果。
 
-发布前检查首页、两篇案例、简历与 PDF 链接，并检查 320px 手机布局、桌面布局和深浅色外观。
+发布前检查首页、两篇案例、在线简历、奖项大图与原始文件链接，并检查 320px 手机布局、桌面布局和深浅色外观。证书预览支持左右方向键切换、Esc 关闭和关闭后的焦点返回。
 
 - [GitHub Pages 官方发布说明](https://docs.github.com/zh/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 - [GitHub Pages 支持的依赖版本](https://pages.github.com/versions/)

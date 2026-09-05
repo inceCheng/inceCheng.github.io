@@ -1,6 +1,8 @@
 main:
   - title: 项目
     url: /#projects
+  - title: 获奖
+    url: /#awards
   - title: 经历
     url: /#experience
   - title: 关于

@@ -1,0 +1,69 @@
+gallery:
+  - id: chaoxing-2023
+    resume_order: 4
+    kind: photo
+    year: 2023
+    category: 工作荣誉
+    distinction: 优秀新人
+    title: 年度优秀新人奖
+    organization: 超星集团
+    detail: 2023 年度 · 优秀新人奖
+    full_title: 超星集团 2023 年度优秀新人奖
+    image: /assets/awards/chaoxing-2023.webp
+    thumbnail: /assets/awards/chaoxing-2023-thumb.webp
+    thumbnail_width: 407
+    original: /assets/awards/chaoxing-2023-original.png
+    original_label: 打开奖杯原图
+    alt: 陈怀桂获得的超星集团 2023 年度优秀新人奖奖杯照片
+  - id: bigdata-2025
+    resume_order: 1
+    kind: certificate
+    year: 2025
+    category: 大数据
+    distinction: 全国决赛三等奖
+    title: 大数据挑战赛
+    organization: 第七届全国高校计算机能力挑战赛
+    detail: 全国决赛 · 团队奖
+    full_title: 2025 年第七届全国高校计算机能力挑战赛 · 大数据挑战赛 · 全国决赛三等奖
+    image: /assets/awards/bigdata-2025.webp
+    thumbnail: /assets/awards/bigdata-2025-thumb.webp
+    thumbnail_width: 603
+    original: /files/awards/bigdata-2025.pdf
+    original_label: 打开证书 PDF
+    alt: 陈怀桂及队友获得的 2025 年大数据挑战赛全国决赛三等奖证书
+  - id: java-2025
+    resume_order: 2
+    kind: certificate
+    year: 2025
+    category: 程序设计
+    distinction: 全国决赛三等奖
+    title: 程序设计 · Java
+    organization: 第七届全国高校计算机能力挑战赛
+    detail: Java 科目 · 全国决赛
+    full_title: 2025 年第七届全国高校计算机能力挑战赛 · 程序设计挑战赛 Java 科目 · 全国决赛三等奖
+    image: /assets/awards/java-2025.webp
+    thumbnail: /assets/awards/java-2025-thumb.webp
+    thumbnail_width: 603
+    original: /files/awards/java-2025.pdf
+    original_label: 打开证书 PDF
+    alt: 陈怀桂获得的 2025 年程序设计挑战赛 Java 科目全国决赛三等奖证书
+  - id: aic-2025
+    resume_order: 3
+    kind: certificate
+    year: 2025
+    category: 人工智能
+    distinction: 省级三等奖
+    title: 人工智能算法精英赛
+    organization: 第七届全球校园人工智能算法精英大赛
+    detail: 算法主题赛 · 智慧气象
+    full_title: 2025 年第七届全球校园人工智能算法精英大赛 · 省级选拔赛三等奖
+    image: /assets/awards/aic-2025.webp
+    thumbnail: /assets/awards/aic-2025-thumb.webp
+    thumbnail_width: 600
+    original: /files/awards/aic-2025.pdf
+    original_label: 打开证书 PDF
+    alt: 陈怀桂及队友获得的 2025 年全球校园人工智能算法精英大赛省级选拔赛三等奖证书
+qualifications:
+  - title: 大学英语四级
+    abbreviation: CET-4
+    category: 语言能力

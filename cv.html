@@ -1,7 +1,7 @@
 ---
 title: 简历
 permalink: /cv/
-description: 陈怀桂的教育背景、Agent 实习、Java 后端工作经历与专业技能。
+description: 陈怀桂的教育背景、Agent 实习、Java 后端工作经历、专业技能与获奖证书。
 redirect_from:
   - /resume/
   - /resume
@@ -12,5 +12,6 @@ redirect_from:
   <section class="resume-section" aria-labelledby="cv-education"><h2 id="cv-education">教育背景</h2>{% for item in site.data.profile.education %}<div class="resume-item"><div class="resume-item-heading"><h3>{{ item.school }}</h3><span class="resume-date">{{ item.dates }}</span></div><p>{{ item.degree }} · {{ item.major }}</p></div>{% endfor %}</section>
   <section class="resume-section" aria-labelledby="cv-experience"><h2 id="cv-experience">工程经历</h2>{% for item in site.data.profile.experience %}<div class="resume-item"><div class="resume-item-heading"><h3>{{ item.company }} · {{ item.role }}</h3><span class="resume-date">{{ item.dates }}</span></div><p>{{ item.team }}</p><p>{{ item.summary }}</p><a class="text-link" href="{{ item.url | relative_url }}">阅读项目案例 <span aria-hidden="true">↗</span></a></div>{% endfor %}</section>
   <section class="resume-section" aria-labelledby="cv-skills"><h2 id="cv-skills">专业技能</h2><dl class="resume-skills">{% for skill in site.data.profile.skills %}<div><dt>{{ skill.label }}</dt><dd>{{ skill.detail }}</dd></div>{% endfor %}</dl></section>
+  <section class="resume-section" aria-labelledby="cv-awards"><h2 id="cv-awards">获奖与资质</h2><ul class="resume-awards">{% assign sorted_awards = site.data.awards.gallery | sort: 'resume_order' %}{% for award in sorted_awards %}<li><time datetime="{{ award.year }}">{{ award.year }}</time><a href="{{ '/' | relative_url }}#award-{{ award.id }}">{% if award.kind == 'photo' %}{{ award.organization }} · {{ award.title }}{% else %}{{ award.organization }}{% if award.id != 'aic-2025' %} · {{ award.title }}{% endif %} · <strong>{{ award.distinction }}</strong>{% endif %}</a></li>{% endfor %}</ul>{% for item in site.data.awards.qualifications %}<p class="resume-qualification">{{ item.category }}：{{ item.title }}（{{ item.abbreviation }}）</p>{% endfor %}<a class="text-link" href="{{ '/' | relative_url }}#awards">查看获奖照片与证书 <span aria-hidden="true">↗</span></a></section>
   <section class="resume-section" aria-labelledby="cv-contact"><h2 id="cv-contact">联系与代码</h2><p><a class="text-link" href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p><p><a class="text-link" href="{{ site.data.profile.github }}" target="_blank" rel="noopener noreferrer">github.com/inceCheng <span aria-hidden="true">↗</span></a></p></section>
 </article>
